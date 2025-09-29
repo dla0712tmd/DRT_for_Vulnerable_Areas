@@ -42,7 +42,7 @@ def load_data():
         st.error(f"❌ 데이터 로드 실패: {str(e)}")
         return None, None, None
 
-gdf, boundary, data = load_data()
+# gdf, boundary, data = load_data()
 
 # 데이터 로드 실패 시 앱 중단
 if gdf is None:
