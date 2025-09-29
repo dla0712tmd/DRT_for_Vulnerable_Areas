@@ -33,16 +33,16 @@ GOOGLE_API_KEY = "AIzaSyAGvjRxDMMiqnHXOvkj1mtzJdKuWq4QT9w"
 @st.cache_data
 def load_data():
     try:
-        gdf = gpd.read_file("cb_tour.shp").to_crs(epsg=4326)
+        gdf = gpd.read_file("./cb_tour.shp").to_crs(epsg=4326)
         gdf["lon"], gdf["lat"] = gdf.geometry.x, gdf.geometry.y
-        boundary = gpd.read_file("cb_shp.shp").to_crs(epsg=4326)
+        boundary = gpd.read_file("./cb_shp.shp").to_crs(epsg=4326)
         data = pd.read_csv("cj_data_final.csv", encoding="cp949").drop_duplicates()
         return gdf, boundary, data
     except Exception as e:
         st.error(f"❌ 데이터 로드 실패: {str(e)}")
         return None, None, None
 
-# gdf, boundary, data = load_data()
+gdf, boundary, data = load_data()
 
 # 데이터 로드 실패 시 앱 중단
 if gdf is None:
