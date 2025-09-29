@@ -36,7 +36,7 @@ def load_data():
         gdf = gpd.read_file("cb_data/cb_tour.shp").to_crs(epsg=4326)
         gdf["lon"], gdf["lat"] = gdf.geometry.x, gdf.geometry.y
         boundary = gpd.read_file("cb_data/cb_shp.shp").to_crs(epsg=4326)
-        data = pd.read_csv("cj_data_final.csv", encoding="cp949").drop_duplicates()
+        data = pd.read_csv("cb_data/cj_data_final.csv", encoding="cp949").drop_duplicates()
         return gdf, boundary, data
     except Exception as e:
         st.error(f"❌ 데이터 로드 실패: {str(e)}")
