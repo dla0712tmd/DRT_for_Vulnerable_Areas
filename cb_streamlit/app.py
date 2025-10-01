@@ -22,11 +22,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed"
 )
-# ──────────────────────────────
-# ✅ 환경변수 불러오기 (Streamlit Cloud 호환에 저장된 키 사용)
-# ──────────────────────────────
-MAPBOX_TOKEN = "pk.eyJ1Ijoia2lteWVvbmp1biIsImEiOiJjbWVnZHNyZmsxMTVpMmtzZzMzMTU5ZGFyIn0.esI42zH2s8c_Dy26yj4uHw"
-GOOGLE_API_KEY = "AIzaSyAGvjRxDMMiqnHXOvkj1mtzJdKuWq4QT9w"
+
 # ──────────────────────────────
 # ✅ 데이터 로드 (안전한 로드)
 # ──────────────────────────────
